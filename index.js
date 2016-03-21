@@ -16,8 +16,13 @@ function plugin() {
 
             return new Promise(function (resolve, reject) {
                 compiler['compile'](code, id, function (error, compiled) {
+                    var code = compiled.script;
+
+                    code += 'export const style = `' + compiled.style + '`;\n';
+                    code += 'export const template = `' + compiled.template + '`;\n';
+
                     var temp = {
-                        code: compiled,
+                        code: code,
                         map: { mappings: '' }
                     };
 
