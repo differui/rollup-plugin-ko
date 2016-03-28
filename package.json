@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-ko",
-  "version": "0.2.8",
+  "version": "0.3.4",
   "description": "Roll .ko files",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/differui/rollup-plugin-ko#readme",
   "dependencies": {
-    "ko-component-compiler": "^0.3.11",
+    "ko-component-compiler": "^0.4.4",
     "rollup-pluginutils": "^1.3.1"
   }
 }
