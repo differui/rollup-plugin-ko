@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var rollupPluginutils = require('rollup-pluginutils');
 var compiler = require('ko-component-compiler');
 
@@ -15,6 +16,14 @@ function plugin() {
             }
 
             return new Promise(function (resolve, reject) {
+                if (path.parse(id).ext === '.js') {
+                    code = [
+                        '<script>',
+                            code,
+                        '</script>'
+                    ].join('\n');
+                }
+
                 compiler['compile'](code, id, function (error, compiled) {
                     var temp = {
                         code: compiled,
